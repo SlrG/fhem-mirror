@@ -365,7 +365,7 @@ sub stopPVG($$$)
                     elsif ($loesche == 1 or $aendern == 1 or $meine == 1 or $aktueller == 1)
                     {	# Nur HTTPMOD Devices raussuchen
                         if (InternalVal("$dev","TYPE","") eq "HTTPMOD")
-                        {   @array[$i] = (ReadingsVal("$dev","Name",""));
+                        {   @array[$i] = (ReadingsVal("$dev","Name","")."\n => ".ReadingsVal("$dev","Preiswecker","")."€ (akt:".ReadingsVal("$dev","Preis","")."€)");
                             $i = $i+1;
                         }
                     }                                   
